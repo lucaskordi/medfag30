@@ -31,56 +31,56 @@ export default function Header({ activeMenu, setActiveMenu }: HeaderProps) {
 
   return (
     <>
-      <motion.header
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.6, ease: 'easeOut' }}
-        className="fixed top-0 left-0 right-0 z-50 bg-white/5 backdrop-blur-sm"
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-center items-center py-4 relative">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="flex items-center"
-            >
-              <Image
-                src="/logofrozen.png"
-                alt="Frozen Sunset Logo"
-                width={200}
-                height={100}
-                className="drop-shadow-lg"
-              />
-            </motion.div>
+             <motion.header
+               initial={{ y: -100 }}
+               animate={{ y: 0 }}
+               transition={{ duration: 0.6, ease: 'easeOut' }}
+               className="fixed top-0 left-0 right-0 z-50 bg-white/5 backdrop-blur-sm"
+             >
+               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                 <div className="flex justify-between items-center py-4 sm:py-6">
+                   <motion.div
+                     whileHover={{ scale: 1.05 }}
+                     className="flex items-center"
+                   >
+                     <Image
+                       src="/logofrozen.png"
+                       alt="Frozen Sunset Logo"
+                       width={200}
+                       height={100}
+                       className="drop-shadow-lg h-10 sm:h-28 w-auto"
+                     />
+                   </motion.div>
 
-            <div className="absolute right-0">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={toggleMenu}
-                className="backdrop-blur-sm text-white px-4 sm:px-6 py-3 rounded-xl text-lg font-semibold border border-green-300/30 hover:bg-green-600/20 transition-all duration-300"
-                style={{ backgroundColor: 'rgba(97, 111, 38, 0.4)' }}
-              >
-                <div className="flex items-center gap-3">
-                  <div className="flex flex-col gap-1">
-                    <motion.div
-                      animate={{ rotate: isMenuOpen ? 45 : 0, y: isMenuOpen ? 6 : 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="w-5 h-0.5 bg-white"
-                    />
-                    <motion.div
-                      animate={{ opacity: isMenuOpen ? 0 : 1 }}
-                      transition={{ duration: 0.3 }}
-                      className="w-5 h-0.5 bg-white"
-                    />
-                    <motion.div
-                      animate={{ rotate: isMenuOpen ? -45 : 0, y: isMenuOpen ? -6 : 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="w-5 h-0.5 bg-white"
-                    />
-                  </div>
-                                 <span className="hidden sm:inline font-montserrat">Menu</span>
-                </div>
-              </motion.button>
+                   <div>
+                     <motion.button
+                       whileHover={{ scale: 1.05 }}
+                       whileTap={{ scale: 0.95 }}
+                       onClick={toggleMenu}
+                       className="backdrop-blur-sm text-white px-2 sm:px-6 py-2 sm:py-3 rounded-xl text-sm sm:text-lg font-semibold border border-green-300/30 hover:bg-green-600/20 transition-all duration-300"
+                       style={{ backgroundColor: 'rgba(97, 111, 38, 0.4)' }}
+                     >
+                       <div className="flex items-center gap-2 sm:gap-3">
+                         <div className="flex flex-col gap-1">
+                           <motion.div
+                             animate={{ rotate: isMenuOpen ? 45 : 0, y: isMenuOpen ? 6 : 0 }}
+                             transition={{ duration: 0.3 }}
+                             className="w-4 h-0.5 sm:w-5 sm:h-0.5 bg-white"
+                           />
+                           <motion.div
+                             animate={{ opacity: isMenuOpen ? 0 : 1 }}
+                             transition={{ duration: 0.3 }}
+                             className="w-4 h-0.5 sm:w-5 sm:h-0.5 bg-white"
+                           />
+                           <motion.div
+                             animate={{ rotate: isMenuOpen ? -45 : 0, y: isMenuOpen ? -6 : 0 }}
+                             transition={{ duration: 0.3 }}
+                             className="w-4 h-0.5 sm:w-5 sm:h-0.5 bg-white"
+                           />
+                         </div>
+                         <span className="hidden sm:inline font-montserrat">Menu</span>
+                       </div>
+                     </motion.button>
 
               <AnimatePresence>
                 {isMenuOpen && (

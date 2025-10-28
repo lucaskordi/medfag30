@@ -43,14 +43,22 @@ const foodItems = [
 ]
 
 export default function FoodCarousel() {
-  const [currentIndex, setCurrentIndex] = useState(0)
+  const [currentIndex, setCurrentIndex] = useState(-1) // -1 para mostrar card inicial
 
   const nextItem = () => {
-    setCurrentIndex((prev) => (prev + 1) % foodItems.length)
+    if (currentIndex === -1) {
+      setCurrentIndex(0)
+    } else {
+      setCurrentIndex((prev) => (prev + 1) % foodItems.length)
+    }
   }
 
   const prevItem = () => {
-    setCurrentIndex((prev) => (prev - 1 + foodItems.length) % foodItems.length)
+    if (currentIndex === 0) {
+      setCurrentIndex(-1)
+    } else {
+      setCurrentIndex((prev) => (prev - 1 + foodItems.length) % foodItems.length)
+    }
   }
 
   return (
@@ -59,29 +67,53 @@ export default function FoodCarousel() {
         <h2 className="text-3xl font-bold text-white mb-6 text-center font-sink uppercase">
           Food Menu
         </h2>
-               <p className="text-white/80 text-center mb-8 font-montserrat">
-                 Serviço em mini bowls de cerâmica artesanal colorida e copinhos biodegradáveis, 
-                 em bancadas de madeira e ilhas montadas com estética de festival.
-               </p>
         
         <div className="relative overflow-hidden">
-          <motion.div
-            key={currentIndex}
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -50 }}
-            transition={{ duration: 0.5 }}
-            className="text-center"
-          >
-                     <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
-                       <h3 className="text-2xl font-bold text-white mb-4 font-sink uppercase">
-                         {foodItems[currentIndex].name}
-                       </h3>
-                       <p className="text-white/90 mb-4 text-lg font-montserrat">
-                         {foodItems[currentIndex].description}
-                       </p>
-                     </div>
-          </motion.div>
+          {currentIndex === -1 ? (
+            <motion.div
+              key="intro"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -50 }}
+              transition={{ duration: 0.5 }}
+              className="text-center"
+            >
+              <div className="bg-white/5 backdrop-blur-sm rounded-xl p-8 border border-white/10">
+                <div className="space-y-4">
+                  <h3 className="text-2xl font-bold text-white font-montserrat">
+                    Serviço em mini bowls de cerâmica artesanal colorida
+                  </h3>
+                  <h3 className="text-2xl font-bold text-white font-montserrat">
+                    E copinhos biodegradáveis
+                  </h3>
+                  <h3 className="text-2xl font-bold text-white font-montserrat">
+                    Em bancadas de madeira e ilhas montadas
+                  </h3>
+                  <h3 className="text-2xl font-bold text-white font-montserrat">
+                    Com estética de festival
+                  </h3>
+                </div>
+              </div>
+            </motion.div>
+          ) : (
+            <motion.div
+              key={currentIndex}
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -50 }}
+              transition={{ duration: 0.5 }}
+              className="text-center"
+            >
+              <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
+                <h3 className="text-2xl font-bold text-white mb-4 font-sink uppercase">
+                  {foodItems[currentIndex].name}
+                </h3>
+                <p className="text-white/90 mb-4 text-lg font-montserrat">
+                  {foodItems[currentIndex].description}
+                </p>
+              </div>
+            </motion.div>
+          )}
         </div>
 
         <div className="flex justify-center items-center mt-8 gap-4">
@@ -89,12 +121,18 @@ export default function FoodCarousel() {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             onClick={prevItem}
-            className="bg-white/20 text-white p-3 rounded-full hover:bg-white/30 transition-colors duration-200"
+            className="bg-yellow-500 text-white p-3 rounded-full hover:bg-yellow-600 transition-colors duration-200 shadow-lg"
           >
             ←
           </motion.button>
           
           <div className="flex gap-2">
+            <button
+              onClick={() => setCurrentIndex(-1)}
+              className={`w-3 h-3 rounded-full transition-colors duration-200 ${
+                currentIndex === -1 ? 'bg-white' : 'bg-white/40'
+              }`}
+            />
             {foodItems.map((_, index) => (
               <button
                 key={index}
@@ -110,7 +148,7 @@ export default function FoodCarousel() {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             onClick={nextItem}
-            className="bg-white/20 text-white p-3 rounded-full hover:bg-white/30 transition-colors duration-200"
+            className="bg-yellow-500 text-white p-3 rounded-full hover:bg-yellow-600 transition-colors duration-200 shadow-lg"
           >
             →
           </motion.button>

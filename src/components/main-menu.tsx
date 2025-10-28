@@ -16,7 +16,7 @@ export default function MainMenu() {
     <>
       <Header activeMenu={activeMenu} setActiveMenu={setActiveMenu} />
       
-      <div className="min-h-screen flex items-center justify-center px-4 pt-24">
+             <div className="min-h-screen flex items-center justify-center px-4 pt-20 sm:pt-24">
         <motion.div
           key={activeMenu}
           initial={{ opacity: 0, y: 20 }}

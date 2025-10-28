@@ -69,7 +69,7 @@ export default function DessertsCarousel() {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             onClick={prevItem}
-            className="bg-white/20 text-white p-3 rounded-full hover:bg-white/30 transition-colors duration-200"
+            className="bg-yellow-500 text-white p-3 rounded-full hover:bg-yellow-600 transition-colors duration-200 shadow-lg"
           >
             ←
           </motion.button>
@@ -90,7 +90,7 @@ export default function DessertsCarousel() {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             onClick={nextItem}
-            className="bg-white/20 text-white p-3 rounded-full hover:bg-white/30 transition-colors duration-200"
+            className="bg-yellow-500 text-white p-3 rounded-full hover:bg-yellow-600 transition-colors duration-200 shadow-lg"
           >
             →
           </motion.button>
