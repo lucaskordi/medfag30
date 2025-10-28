@@ -6,39 +6,39 @@ import { useState } from 'react'
 const foodItems = [
   {
     id: 1,
-    name: 'Ceviche de peixe branco e maracujá',
-    description: 'Servido em mini taças translúcidas com chips de batata-doce espetados.',
-    presentation: 'Mini taças translúcidas com chips de batata-doce'
+    name: 'Ceviche De Peixe Branco E Maracujá',
+    description: 'Servido Em Mini Taças Translúcidas Com Chips De Batata-Doce Espetados.',
+    presentation: 'Mini Taças Translúcidas Com Chips De Batata-Doce'
   },
   {
     id: 2,
-    name: 'Mini tostadas de polvo com guacamole cítrico',
-    description: 'Servidas sobre bases de mini tortilhas crocantes, finalizadas com brotos e flor comestível.',
-    presentation: 'Mini tortilhas crocantes com brotos e flor comestível'
+    name: 'Mini Tostadas De Polvo Com Guacamole Cítrico',
+    description: 'Servidas Sobre Bases De Mini Tortilhas Crocantes, Finalizadas Com Brotos E Flor Comestível.',
+    presentation: 'Mini Tortilhas Crocantes Com Brotos E Flor Comestível'
   },
   {
     id: 3,
-    name: 'Espetinhos de camarão com aioli de páprica defumada',
-    description: 'Servidos em cones de papel vegetal, com farofinha crocante e ervas secas.',
-    presentation: 'Cones de papel vegetal com farofinha crocante'
+    name: 'Espetinhos De Camarão Com Aioli De Páprica Defumada',
+    description: 'Servidos Em Cones De Papel Vegetal, Com Farofinha Crocante E Ervas Secas.',
+    presentation: 'Cones De Papel Vegetal Com Farofinha Crocante'
   },
   {
     id: 4,
-    name: 'Bruschettas de tapenade e tomate confit',
-    description: 'Em pão artesanal tostado, com azeite trufado e tomatinhos coloridos.',
-    presentation: 'Pão artesanal tostado com azeite trufado'
+    name: 'Bruschettas De Tapenade E Tomate Confit',
+    description: 'Em Pão Artesanal Tostado, Com Azeite Trufado E Tomatinhos Coloridos.',
+    presentation: 'Pão Artesanal Tostado Com Azeite Trufado'
   },
   {
     id: 5,
-    name: 'Mini bowl de couscous marroquino',
-    description: 'Com legumes grelhados e limão siciliano, servido frio em porções individuais com toque de hortelã fresca.',
-    presentation: 'Porções individuais com hortelã fresca'
+    name: 'Mini Bowl De Couscous Marroquino',
+    description: 'Com Legumes Grelhados E Limão Siciliano, Servido Frio Em Porções Individuais Com Toque De Hortelã Fresca.',
+    presentation: 'Porções Individuais Com Hortelã Fresca'
   },
   {
     id: 6,
-    name: 'Tacos mini de frango ao curry',
-    description: 'Com sour cream de limão, montados na hora, com cores vibrantes e aroma marcante.',
-    presentation: 'Montados na hora com cores vibrantes'
+    name: 'Tacos Mini De Frango Ao Curry',
+    description: 'Com Sour Cream De Limão, Montados Na Hora, Com Cores Vibrantes E Aroma Marcante.',
+    presentation: 'Montados Na Hora Com Cores Vibrantes'
   }
 ]
 
@@ -59,10 +59,10 @@ export default function FoodCarousel() {
         <h2 className="text-3xl font-bold text-white mb-6 text-center font-sink uppercase">
           Food Menu
         </h2>
-        <p className="text-white/80 text-center mb-8">
-          Serviço em mini bowls de cerâmica artesanal colorida e copinhos biodegradáveis, 
-          em bancadas de madeira e ilhas montadas com estética de festival.
-        </p>
+               <p className="text-white/80 text-center mb-8 font-montserrat">
+                 Serviço em mini bowls de cerâmica artesanal colorida e copinhos biodegradáveis, 
+                 em bancadas de madeira e ilhas montadas com estética de festival.
+               </p>
         
         <div className="relative overflow-hidden">
           <motion.div
@@ -73,14 +73,14 @@ export default function FoodCarousel() {
             transition={{ duration: 0.5 }}
             className="text-center"
           >
-            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
-              <h3 className="text-2xl font-bold text-white mb-4 font-sink uppercase">
-                {foodItems[currentIndex].name}
-              </h3>
-              <p className="text-white/90 mb-4 text-lg">
-                {foodItems[currentIndex].description}
-              </p>
-            </div>
+                     <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
+                       <h3 className="text-2xl font-bold text-white mb-4 font-sink uppercase">
+                         {foodItems[currentIndex].name}
+                       </h3>
+                       <p className="text-white/90 mb-4 text-lg font-montserrat">
+                         {foodItems[currentIndex].description}
+                       </p>
+                     </div>
           </motion.div>
         </div>
 

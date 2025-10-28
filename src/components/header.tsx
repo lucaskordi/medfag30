@@ -78,7 +78,7 @@ export default function Header({ activeMenu, setActiveMenu }: HeaderProps) {
                       className="w-5 h-0.5 bg-white"
                     />
                   </div>
-                  <span className="hidden sm:inline">Menu</span>
+                                 <span className="hidden sm:inline font-montserrat">Menu</span>
                 </div>
               </motion.button>
 
@@ -102,9 +102,9 @@ export default function Header({ activeMenu, setActiveMenu }: HeaderProps) {
                           transition={{ duration: 0.3, delay: index * 0.1 }}
                           whileHover={{ backgroundColor: 'rgba(255, 255, 255, 0.2)' }}
                           onClick={() => selectMenu(item.id as MenuType)}
-                          className={`w-full px-6 py-4 text-left text-white font-semibold transition-colors duration-200 border-b border-white/10 last:border-b-0 ${
-                            activeMenu === item.id ? 'bg-white/20' : ''
-                          }`}
+                                 className={`w-full px-6 py-4 text-left text-white font-semibold transition-colors duration-200 border-b border-white/10 last:border-b-0 font-montserrat ${
+                                   activeMenu === item.id ? 'bg-white/20' : ''
+                                 }`}
                         >
                           {item.label}
                         </motion.button>
@@ -167,11 +167,11 @@ export default function Header({ activeMenu, setActiveMenu }: HeaderProps) {
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
                                 onClick={() => selectMenu(item.id as MenuType)}
-                                className={`w-full py-4 px-6 text-center text-white font-bold text-lg rounded-2xl transition-all duration-300 ${
-                                  activeMenu === item.id 
-                                    ? 'bg-white/30 border-2 border-white/50' 
-                                    : 'bg-white/10 border-2 border-white/20 hover:bg-white/20'
-                                }`}
+                                       className={`w-full py-4 px-6 text-center text-white font-bold text-lg rounded-2xl transition-all duration-300 font-montserrat ${
+                                         activeMenu === item.id 
+                                           ? 'bg-white/30 border-2 border-white/50' 
+                                           : 'bg-white/10 border-2 border-white/20 hover:bg-white/20'
+                                       }`}
                               >
                                 {item.label}
                               </motion.button>

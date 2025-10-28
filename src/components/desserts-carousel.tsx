@@ -6,15 +6,15 @@ import { useState } from 'react'
 const dessertsItems = [
   {
     id: 1,
-    name: 'Mini paletas de cheesecake com frutas vermelhas',
-    description: 'Servidas em pequenas formas de picolé, remetendo ao conceito "frozen".',
-    presentation: 'Pequenas formas de picolé com conceito frozen'
+    name: 'Mini Paletas De Cheesecake Com Frutas Vermelhas',
+    description: 'Servidas Em Pequenas Formas De Picolé, Remetendo Ao Conceito "Frozen".',
+    presentation: 'Pequenas Formas De Picolé Com Conceito Frozen'
   },
   {
     id: 2,
-    name: 'Copinhos de mousse de coco e maracujá com crumble salgado',
-    description: 'Apresentação em copinhos translúcidos com decoração minimalista.',
-    presentation: 'Copinhos translúcidos com decoração minimalista'
+    name: 'Copinhos De Mousse De Coco E Maracujá Com Crumble Salgado',
+    description: 'Apresentação Em Copinhos Translúcidos Com Decoração Minimalista.',
+    presentation: 'Copinhos Translúcidos Com Decoração Minimalista'
   }
 ]
 
@@ -35,7 +35,7 @@ export default function DessertsCarousel() {
         <h2 className="text-3xl font-bold text-white mb-6 text-center font-sink uppercase">
           Sobremesas
         </h2>
-        <p className="text-white/80 text-center mb-8">
+        <p className="text-white/80 text-center mb-8 font-montserrat">
           Doces únicos com apresentação especial e sabores marcantes.
         </p>
         
@@ -52,11 +52,11 @@ export default function DessertsCarousel() {
               <h3 className="text-2xl font-bold text-white mb-4 font-sink uppercase">
                 {dessertsItems[currentIndex].name}
               </h3>
-              <p className="text-white/90 mb-4 text-lg">
+              <p className="text-white/90 mb-4 text-lg font-montserrat">
                 {dessertsItems[currentIndex].description}
               </p>
               <div className="bg-white/10 rounded-lg p-4">
-                <p className="text-white/80 font-semibold">
+                <p className="text-white/80 font-semibold font-sink uppercase">
                   Apresentação: {dessertsItems[currentIndex].presentation}
                 </p>
               </div>

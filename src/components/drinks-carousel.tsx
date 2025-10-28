@@ -7,44 +7,44 @@ const drinksItems = [
   {
     id: 1,
     name: 'Maracujito Chill',
-    base: 'Rum branco',
-    touches: 'maracujá, hortelã e xarope artesanal de gengibre',
-    aesthetic: 'amarelo intenso com raspas de limão e folha de hortelã congelada dentro'
+    base: 'Rum Branco',
+    touches: 'Maracujá, Hortelã E Xarope Artesanal De Gengibre',
+    aesthetic: 'Amarelo Intenso Com Raspas De Limão E Folha De Hortelã Congelada Dentro'
   },
   {
     id: 2,
     name: 'Coco Dream',
     base: 'Vodka',
-    touches: 'leite de coco, limão siciliano e toque de baunilha artesanal',
-    aesthetic: 'degradê branco e creme com raspas de limão e pitadas douradas'
+    touches: 'Leite De Coco, Limão Siciliano E Toque De Baunilha Artesanal',
+    aesthetic: 'Degradê Branco E Creme Com Raspas De Limão E Pitadas Douradas'
   },
   {
     id: 3,
     name: 'Manga Rosa',
-    base: 'Gin + licor de pêssego',
-    touches: 'manga, hibisco e flor de sal',
-    aesthetic: 'rosa vibrante e dourado, com brilho comestível e flor seca'
+    base: 'Gin + Licor De Pêssego',
+    touches: 'Manga, Hibisco E Flor De Sal',
+    aesthetic: 'Rosa Vibrante E Dourado, Com Brilho Comestível E Flor Seca'
   },
   {
     id: 4,
     name: 'Sunset 43',
     base: 'Licor 43',
-    touches: 'limão-taiti, raspas de laranja e leve toque de mel',
-    aesthetic: 'dourado-âmbar com rodelas finas de limão desidratado'
+    touches: 'Limão-Taiti, Raspas De Laranja E Leve Toque De Mel',
+    aesthetic: 'Dourado-Âmbar Com Rodelas Finas De Limão Desidratado'
   },
   {
     id: 5,
     name: 'Pitaya Punch',
-    base: 'Vodka + licor de amora',
-    touches: 'pitaya e hortelã',
-    aesthetic: 'roxo-pink intenso com pedrinhas de gelo translúcidas coloridas'
+    base: 'Vodka + Licor De Amora',
+    touches: 'Pitaya E Hortelã',
+    aesthetic: 'Roxo-Pink Intenso Com Pedrinhas De Gelo Translúcidas Coloridas'
   },
   {
     id: 6,
     name: 'Frozen Verde Limão',
-    base: 'Cachaça artesanal',
-    touches: 'limão tahiti, mel e manjericão',
-    aesthetic: 'verde neon com folhas inteiras de manjericão'
+    base: 'Cachaça Artesanal',
+    touches: 'Limão Tahiti, Mel E Manjericão',
+    aesthetic: 'Verde Neon Com Folhas Inteiras De Manjericão'
   }
 ]
 
@@ -86,17 +86,17 @@ export default function DrinksCarousel() {
             >
               <div className="bg-white/5 backdrop-blur-sm rounded-xl p-8 border border-white/10">
                 <div className="space-y-4">
-                  <h3 className="text-2xl font-bold text-white font-sink uppercase">
-                    Drinks Servidos em
+                  <h3 className="text-2xl font-bold text-white font-montserrat">
+                    Drinks servidos em
                   </h3>
-                  <h3 className="text-2xl font-bold text-white font-sink uppercase">
-                    Copos Acrílicos com Glitter Holográfico
+                  <h3 className="text-2xl font-bold text-white font-montserrat">
+                    Copos acrílicos com glitter holográfico
                   </h3>
-                  <h3 className="text-2xl font-bold text-white font-sink uppercase">
-                    Decorações com Frutas Frescas
+                  <h3 className="text-2xl font-bold text-white font-montserrat">
+                    Decorações com frutas frescas
                   </h3>
-                  <h3 className="text-2xl font-bold text-white font-sink uppercase">
-                    Ervas Congeladas
+                  <h3 className="text-2xl font-bold text-white font-montserrat">
+                    Ervas congeladas
                   </h3>
                 </div>
               </div>
@@ -117,18 +117,18 @@ export default function DrinksCarousel() {
                 
                 <div className="grid md:grid-cols-3 gap-4 text-left">
                   <div className="bg-white/10 rounded-lg p-4">
-                    <h4 className="text-white font-semibold mb-2">Base:</h4>
-                    <p className="text-white/90">{drinksItems[currentIndex].base}</p>
+                    <h4 className="text-white font-semibold mb-2 font-sink uppercase">Base:</h4>
+                    <p className="text-white/90 font-montserrat">{drinksItems[currentIndex].base}</p>
                   </div>
                   
                   <div className="bg-white/10 rounded-lg p-4">
-                    <h4 className="text-white font-semibold mb-2">Toques:</h4>
-                    <p className="text-white/90">{drinksItems[currentIndex].touches}</p>
+                    <h4 className="text-white font-semibold mb-2 font-sink uppercase">Toques:</h4>
+                    <p className="text-white/90 font-montserrat">{drinksItems[currentIndex].touches}</p>
                   </div>
                   
                   <div className="bg-white/10 rounded-lg p-4">
-                    <h4 className="text-white font-semibold mb-2">Estética:</h4>
-                    <p className="text-white/90">{drinksItems[currentIndex].aesthetic}</p>
+                    <h4 className="text-white font-semibold mb-2 font-sink uppercase">Estética:</h4>
+                    <p className="text-white/90 font-montserrat">{drinksItems[currentIndex].aesthetic}</p>
                   </div>
                 </div>
               </div>

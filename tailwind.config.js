@@ -11,10 +11,11 @@ module.exports = {
         background: 'var(--background)',
         foreground: 'var(--foreground)',
       },
-      fontFamily: {
-        'sink': ['Sink', 'sans-serif'],
-        'inter': ['Inter', 'sans-serif'],
-      },
+             fontFamily: {
+               'sink': ['Sink', 'sans-serif'],
+               'montserrat': ['Montserrat', 'sans-serif'],
+               'inter': ['Inter', 'sans-serif'],
+             },
     },
   },
   plugins: [],
