@@ -49,14 +49,22 @@ const drinksItems = [
 ]
 
 export default function DrinksCarousel() {
-  const [currentIndex, setCurrentIndex] = useState(0)
+  const [currentIndex, setCurrentIndex] = useState(-1) // -1 para mostrar card inicial
 
   const nextItem = () => {
-    setCurrentIndex((prev) => (prev + 1) % drinksItems.length)
+    if (currentIndex === -1) {
+      setCurrentIndex(0)
+    } else {
+      setCurrentIndex((prev) => (prev + 1) % drinksItems.length)
+    }
   }
 
   const prevItem = () => {
-    setCurrentIndex((prev) => (prev - 1 + drinksItems.length) % drinksItems.length)
+    if (currentIndex === 0) {
+      setCurrentIndex(-1)
+    } else {
+      setCurrentIndex((prev) => (prev - 1 + drinksItems.length) % drinksItems.length)
+    }
   }
 
   return (
@@ -65,43 +73,67 @@ export default function DrinksCarousel() {
         <h2 className="text-3xl font-bold text-white mb-6 text-center font-sink uppercase">
           Carta de Drinks
         </h2>
-        <p className="text-white/80 text-center mb-8">
-          Todos os drinks servidos em copos acrílicos coloridos com glitter holográfico, 
-          acompanhados de decorações com frutas frescas e ervas congeladas.
-        </p>
         
         <div className="relative overflow-hidden">
-          <motion.div
-            key={currentIndex}
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -50 }}
-            transition={{ duration: 0.5 }}
-            className="text-center"
-          >
-            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
-              <h3 className="text-2xl font-bold text-white mb-4 font-sink uppercase">
-                {drinksItems[currentIndex].name}
-              </h3>
-              
-              <div className="grid md:grid-cols-3 gap-4 text-left">
-                <div className="bg-white/10 rounded-lg p-4">
-                  <h4 className="text-white font-semibold mb-2">Base:</h4>
-                  <p className="text-white/90">{drinksItems[currentIndex].base}</p>
-                </div>
-                
-                <div className="bg-white/10 rounded-lg p-4">
-                  <h4 className="text-white font-semibold mb-2">Toques:</h4>
-                  <p className="text-white/90">{drinksItems[currentIndex].touches}</p>
-                </div>
-                
-                <div className="bg-white/10 rounded-lg p-4">
-                  <h4 className="text-white font-semibold mb-2">Estética:</h4>
-                  <p className="text-white/90">{drinksItems[currentIndex].aesthetic}</p>
+          {currentIndex === -1 ? (
+            <motion.div
+              key="intro"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -50 }}
+              transition={{ duration: 0.5 }}
+              className="text-center"
+            >
+              <div className="bg-white/5 backdrop-blur-sm rounded-xl p-8 border border-white/10">
+                <div className="space-y-4">
+                  <h3 className="text-2xl font-bold text-white font-sink uppercase">
+                    Drinks Servidos em
+                  </h3>
+                  <h3 className="text-2xl font-bold text-white font-sink uppercase">
+                    Copos Acrílicos com Glitter Holográfico
+                  </h3>
+                  <h3 className="text-2xl font-bold text-white font-sink uppercase">
+                    Decorações com Frutas Frescas
+                  </h3>
+                  <h3 className="text-2xl font-bold text-white font-sink uppercase">
+                    Ervas Congeladas
+                  </h3>
                 </div>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          ) : (
+            <motion.div
+              key={currentIndex}
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -50 }}
+              transition={{ duration: 0.5 }}
+              className="text-center"
+            >
+              <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
+                <h3 className="text-2xl font-bold text-white mb-4 font-sink uppercase">
+                  {drinksItems[currentIndex].name}
+                </h3>
+                
+                <div className="grid md:grid-cols-3 gap-4 text-left">
+                  <div className="bg-white/10 rounded-lg p-4">
+                    <h4 className="text-white font-semibold mb-2">Base:</h4>
+                    <p className="text-white/90">{drinksItems[currentIndex].base}</p>
+                  </div>
+                  
+                  <div className="bg-white/10 rounded-lg p-4">
+                    <h4 className="text-white font-semibold mb-2">Toques:</h4>
+                    <p className="text-white/90">{drinksItems[currentIndex].touches}</p>
+                  </div>
+                  
+                  <div className="bg-white/10 rounded-lg p-4">
+                    <h4 className="text-white font-semibold mb-2">Estética:</h4>
+                    <p className="text-white/90">{drinksItems[currentIndex].aesthetic}</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          )}
         </div>
 
         <div className="flex justify-center items-center mt-8 gap-4">
@@ -115,6 +147,12 @@ export default function DrinksCarousel() {
           </motion.button>
           
           <div className="flex gap-2">
+            <button
+              onClick={() => setCurrentIndex(-1)}
+              className={`w-3 h-3 rounded-full transition-colors duration-200 ${
+                currentIndex === -1 ? 'bg-white' : 'bg-white/40'
+              }`}
+            />
             {drinksItems.map((_, index) => (
               <button
                 key={index}

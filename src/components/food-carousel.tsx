@@ -80,11 +80,6 @@ export default function FoodCarousel() {
               <p className="text-white/90 mb-4 text-lg">
                 {foodItems[currentIndex].description}
               </p>
-              <div className="bg-white/10 rounded-lg p-4">
-                <p className="text-white/80 font-semibold">
-                  Apresentação: {foodItems[currentIndex].presentation}
-                </p>
-              </div>
             </div>
           </motion.div>
         </div>
