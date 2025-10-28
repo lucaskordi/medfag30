@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'Sink';
+  src: url('/SINK.OTF') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-sink {
+  font-family: 'Sink', sans-serif;
+}
